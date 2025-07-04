@@ -1,0 +1,2 @@
+# JavaAssignments
+All Java assignments

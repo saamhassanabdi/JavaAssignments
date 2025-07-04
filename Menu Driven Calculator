@@ -1,0 +1,58 @@
+package Assigment;
+
+import java.util.Scanner;
+
+public class classworka {
+
+    public static void main(String[] args) {
+        Scanner input = new Scanner(System.in);
+        int choice;
+        int num1, num2;
+
+        do {
+            System.out.println("\n=== Menu Driven Calculator ===");
+            System.out.println("1. Add");
+            System.out.println("2. Subtract");
+            System.out.println("3. Multiply");
+            System.out.println("4. Divide");
+            System.out.println("5. Exit");
+            System.out.print("Enter your choice: ");
+            choice = input.nextInt();
+
+            if (choice >= 1 && choice <= 4) {
+                System.out.print("Enter first number: ");
+                num1 = input.nextInt();
+                System.out.print("Enter second number: ");
+                num2 = input.nextInt();
+
+                switch (choice) {
+                    case 1: add(num1, num2); break;
+                    case 2: sub(num1, num2); break;
+                    case 3: mult(num1, num2); break;
+                    case 4: div(num1, num2); break;
+                }
+            } else if (choice != 5) {
+                System.out.println("Invalid choice! Please choose between 1 and 5.");
+            }
+
+        } while (choice != 5);
+
+        System.out.println("Goodbye!");
+    }
+
+    public static void add(int a, int b) {
+        System.out.println("Result: " + (a + b));
+    }
+    public static void sub(int a, int b) {
+        System.out.println("Result: " + (a - b));
+    }
+    public static void mult(int a, int b) {
+        System.out.println("Result: " + (a * b));
+    }
+    public static void div(int a, int b) {
+        if (b != 0)
+            System.out.println("Result: " + (a / b));
+        else
+            System.out.println("Error: Can't divide by 0");
+    }
+}
